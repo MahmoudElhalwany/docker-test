@@ -26,7 +26,7 @@ services:
     - GMS_HOST=datahub-gms
     - GMS_PORT=8080
     - KAFKA_BOOTSTRAP_SERVER=broker:29092
-    - SCHEMA_REGISTRY_URL=http://schema-registry:8082
+    - SCHEMA_REGISTRY_URL=http://schema-registry:8081
     - METADATA_AUDIT_EVENT_NAME=MetadataAuditEvent_v4
     - METADATA_CHANGE_LOG_VERSIONED_TOPIC_NAME=MetadataChangeLog_Versioned_v1
     - DATAHUB_SYSTEM_CLIENT_ID=__datahub_system
@@ -70,7 +70,7 @@ services:
     - EBEAN_DATASOURCE_URL=jdbc:mysql://mysql:3301/datahub?verifyServerCertificate=false&useSSL=true&useUnicode=yes&characterEncoding=UTF-8
     - EBEAN_DATASOURCE_DRIVER=com.mysql.jdbc.Driver
     - KAFKA_BOOTSTRAP_SERVER=broker:29092
-    - KAFKA_SCHEMAREGISTRY_URL=http://schema-registry:8082
+    - KAFKA_SCHEMAREGISTRY_URL=http://schema-registry:8081
     - ELASTICSEARCH_HOST=elasticsearch
     - ELASTICSEARCH_PORT=9200
     - GRAPH_SERVICE_IMPL=elasticsearch
@@ -165,7 +165,7 @@ services:
     hostname: schema-registry
     image: confluentinc/cp-schema-registry:5.4.0
     ports:
-    - 8085:8081
+    - 8081:8081
   zookeeper:
     container_name: zookeeper
     environment:
