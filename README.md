@@ -165,7 +165,7 @@ services:
     hostname: schema-registry
     image: confluentinc/cp-schema-registry:5.4.0
     ports:
-    - 8081:8081
+    - 8082:8081
   zookeeper:
     container_name: zookeeper
     environment:
