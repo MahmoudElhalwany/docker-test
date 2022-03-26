@@ -18,7 +18,7 @@ services:
     image: confluentinc/cp-kafka:5.4.0
     ports:
     - 29092:29092
-    - 9091:9092
+    - 9090:9092
   datahub-actions:
     depends_on:
     - datahub-gms
