@@ -55,7 +55,7 @@ services:
     hostname: datahub-frontend-react
     image: linkedin/datahub-frontend-react:${DATAHUB_VERSION:-head}
     ports:
-    - 9002:9002
+    - 9001:9002
     volumes:
     - ${HOME}/.datahub/plugins:/etc/datahub/plugins
   datahub-gms:
