@@ -148,7 +148,7 @@ services:
     - mysql
     environment:
     - MYSQL_HOST=mysql
-    - MYSQL_PORT=3306
+    - MYSQL_PORT=3301
     - MYSQL_USERNAME=datahub
     - MYSQL_PASSWORD=datahub
     - DATAHUB_DB_NAME=datahub
