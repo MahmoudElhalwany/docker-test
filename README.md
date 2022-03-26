@@ -135,7 +135,8 @@ services:
     - MYSQL_PASSWORD=datahub
     - MYSQL_ROOT_PASSWORD=datahub
     hostname: mysql
-    image: mysql
+    
+    image: mysql:8-oracle
     ports:
     - 3306:3306
     volumes:
