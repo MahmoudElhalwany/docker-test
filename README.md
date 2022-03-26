@@ -55,7 +55,7 @@ services:
     hostname: datahub-frontend-react
     image: linkedin/datahub-frontend-react:${DATAHUB_VERSION:-head}
     ports:
-    - 9001:9002
+    - 9002:9002
     volumes:
     - ${HOME}/.datahub/plugins:/etc/datahub/plugins
   datahub-gms:
@@ -66,8 +66,8 @@ services:
     - DATASET_ENABLE_SCSI=false
     - EBEAN_DATASOURCE_USERNAME=datahub
     - EBEAN_DATASOURCE_PASSWORD=datahub
-    - EBEAN_DATASOURCE_HOST=mysql
-    - EBEAN_DATASOURCE_URL=jdbc:mysql://mysql/datahub?verifyServerCertificate=false&useSSL=true&useUnicode=yes&characterEncoding=UTF-8
+    - EBEAN_DATASOURCE_HOST=mysql:3307
+    - EBEAN_DATASOURCE_URL=jdbc:mysql://mysql:3307/datahub?verifyServerCertificate=false&useSSL=true&useUnicode=yes&characterEncoding=UTF-8
     - EBEAN_DATASOURCE_DRIVER=com.mysql.jdbc.Driver
     - KAFKA_BOOTSTRAP_SERVER=broker:29092
     - KAFKA_SCHEMAREGISTRY_URL=http://schema-registry:8081
@@ -135,10 +135,9 @@ services:
     - MYSQL_PASSWORD=datahub
     - MYSQL_ROOT_PASSWORD=datahub
     hostname: mysql
-    
     image: mysql:8-oracle
     ports:
-    - 3301:3306
+    - 3307:3306
     volumes:
     - ../mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
     - mysqldata:/var/lib/mysql
@@ -148,7 +147,7 @@ services:
     - mysql
     environment:
     - MYSQL_HOST=mysql
-    - MYSQL_PORT=3301
+    - MYSQL_PORT=3307
     - MYSQL_USERNAME=datahub
     - MYSQL_PASSWORD=datahub
     - DATAHUB_DB_NAME=datahub
