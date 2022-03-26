@@ -66,8 +66,8 @@ services:
     - DATASET_ENABLE_SCSI=false
     - EBEAN_DATASOURCE_USERNAME=datahub
     - EBEAN_DATASOURCE_PASSWORD=datahub
-    - EBEAN_DATASOURCE_HOST=mysql:3301
-    - EBEAN_DATASOURCE_URL=jdbc:mysql://mysql:3301/datahub?verifyServerCertificate=false&useSSL=true&useUnicode=yes&characterEncoding=UTF-8
+    - EBEAN_DATASOURCE_HOST=mysql
+    - EBEAN_DATASOURCE_URL=jdbc:mysql://mysql/datahub?verifyServerCertificate=false&useSSL=true&useUnicode=yes&characterEncoding=UTF-8
     - EBEAN_DATASOURCE_DRIVER=com.mysql.jdbc.Driver
     - KAFKA_BOOTSTRAP_SERVER=broker:29092
     - KAFKA_SCHEMAREGISTRY_URL=http://schema-registry:8081
@@ -147,7 +147,7 @@ services:
     - mysql
     environment:
     - MYSQL_HOST=mysql
-    - MYSQL_PORT=3301
+    - MYSQL_PORT=
     - MYSQL_USERNAME=datahub
     - MYSQL_PASSWORD=datahub
     - DATAHUB_DB_NAME=datahub
